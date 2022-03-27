@@ -10,11 +10,7 @@ int countPairs1(int *arr, int len, int value) {
   }
   }
   }
-  if (kol > 0) {
   return kol;
-  } else {
-  return 0;
-  }
 }
 int countPairs2(int *arr, int len, int value) {
   while (arr[len - 1] > value) {
@@ -30,11 +26,7 @@ int countPairs2(int *arr, int len, int value) {
   }
   }
   }
-  if (kol > 0) {
   return kol;
-  } else {
-  return 0;
-  }
 }
 int dopk3(int *arr, int len, int value, int lev) {
   int kol = 0, d = len - 1;
