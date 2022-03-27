@@ -4,7 +4,7 @@ int countPairs1(int *arr, int len, int value) {
   int j = 0;
   int kol = 0;
   for (int i = 0; i < len; i++) {
-  for (int j = 0; j < len; j++) {
+  for (int j = i + 1; j < len; j++) {
   if (arr[i] + arr[j] == value) {
   kol = kol + 1;
   }
@@ -24,7 +24,7 @@ int countPairs2(int *arr, int len, int value) {
   int j = 0;
   int kol = 0;
   for (int i = 0; i < len; i++) {
-  for (int j = 0; j < len; j++) {
+  for (int j = i + 1; j < len; j++) {
   if (arr[i] + arr[j] == value) {
   kol = kol + 1;
   }
@@ -61,7 +61,7 @@ int dopk3(int *arr, int len, int value, int lev) {
 int countPairs3(int *arr, int len, int value) {
   int kol = 0;
   for (int i =0; i < len; i++) {
-  kol = dopk3(arr, len, value - arr[i], i);
+  kol = kol + dopk3(arr, len, value - arr[i], i);
   }
   return kol;
 }
