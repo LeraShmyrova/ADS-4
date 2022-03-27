@@ -37,12 +37,12 @@ int countPairs2(int *arr, int len, int value) {
   }
 }
 int dopk3(int *arr, int len, int value, int lev) {
-  int kol = 0;
-  while (lev < len - 1) {
-  int sr = lev + (len - 1 - lev) / 2;
+  int kol = 0, d = len - 1;
+  while (lev < d) {
+  int sr = lev + (d - lev) / 2;
   if (arr[sr] == value && sr != lev) {
   kol = kol + 1;
-  int a = sr, b == sr;
+  int a = sr, b = sr;
   while (arr[++a] == value) {
   kol = kol + 1;
   }
@@ -51,7 +51,7 @@ int dopk3(int *arr, int len, int value, int lev) {
   }
   return kol;
   } else if (arr[sr] > value) {
-  len -1 = sr;
+  d = sr;
   } else {
   lev = sr + 1;
   }
